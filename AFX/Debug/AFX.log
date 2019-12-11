@@ -1,0 +1,4 @@
+﻿  main.cpp
+D:\gays\AFX\src\main.cpp(17,1): error C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h(476): message : 参见“ctime”的声明
+D:\gays\AFX\src\main.cpp(30,16): warning C4244: “参数”: 从“double”转换到“DWORD”，可能丢失数据
