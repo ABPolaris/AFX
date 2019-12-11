@@ -24,10 +24,7 @@ int main()
 {
 	Console* con = Console::getInstance();
 	con->init();
-	while (true)
-	{
-		update();
-		Sleep(1000.0 / 60.0);//±£Ö¤FPSÎª60
-	}
+	update();
+
 	return 0;
 }
