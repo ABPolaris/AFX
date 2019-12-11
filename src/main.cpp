@@ -6,8 +6,12 @@
 #include<ctime>
 #include<Windows.h>
 using namespace std;
-void update()
-{
+void OrangeCuiInit() {
+	Console* con = Console::getInstance();
+	con->init();
+	//con->resize(60, 18);
+}
+void update() {
 	Console* con = Console::getInstance();
 	static int screenUpdateCounter = 0;
 	//一秒刷新一次显示
@@ -23,11 +27,17 @@ void update()
 }
 int main()
 {
+	//初始化
 	Console* con = Console::getInstance();
 	AfxIO* afxIO = AfxIO::getInstance();
-	con->init();
-	update();
+	OrangeCuiInit();
 	afxIO->CreativeResultFile();
-	printf_s("%s", "success\n");
+	con->printAt(0, ColorString("Create Success\n",Color::BRIGHTBLUE));
+	con->refresh();
+
+
+	//con->setCursorPosition(1, 18);
+	//afxIO->InquireResult();
+	system("pause");
 	return 0;
 }
