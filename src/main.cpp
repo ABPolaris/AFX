@@ -1,4 +1,5 @@
 #include"Console.h"
+#include"./AFXIO.h"
 #include<iostream>
 #include<algorithm>
 #include<memory>
@@ -23,8 +24,10 @@ void update()
 int main()
 {
 	Console* con = Console::getInstance();
+	AfxIO* afxIO = AfxIO::getInstance();
 	con->init();
 	update();
-
+	afxIO->CreativeResultFile();
+	printf_s("%s", "success\n");
 	return 0;
 }
