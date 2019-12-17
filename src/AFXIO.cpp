@@ -7,45 +7,74 @@ AfxIO* AfxIO::getInstance(){
 		instance = new AfxIO();
 	return instance;
 }
-void AfxIO::CreativeResultFile() {
-	ofstream ResOutput("./Result.log");
-	for (int i = 0; i < 7; i++) {
-		ResOutput <<'0'<< endl;
+void AfxIO::CreativeResultFile(bool force) {
+	bool ifFileAppear;
+	ifstream ResTest("./Result.log");
+	ifFileAppear = ResTest.is_open();
+	ResTest.close();
+	if (force) {
+		ofstream ResOutput("./Result.log");
+		for (int i = 0; i < 7; i++) {
+			ResOutput << '0' << endl;
+		}
+		ResOutput.close();
 	}
-	ResOutput.close();
+	else if (ifFileAppear) {
+		return;
+	}
+	else {
+		ofstream ResOutput("./Result.log");
+		for (int i = 0; i < 7; i++) {
+			ResOutput << '0' << endl;
+		}
+		ResOutput.close();
+	}
+	
 }
 void AfxIO::InquireResult() {
 	Console* con = Console::getInstance();
 	ifstream ResInput("./Result.log");
-	string cache;
+	string cache,resNum[9];
+	bool ifNumber=true;
 	int ifRefresh;
 	
+	for (int i = 0; i < 7; i++) {
+		ResInput >> cache;
+		ifNumber = true;
+		for (int j = 0; j < cache.length(); j++) {
+			if (cache[j] > '9' || cache[j] < '0') {
+				ifNumber = false;
+			}
+		}
+		if (ifNumber) {
+			resNum[i] = cache;
+		}
+		else {
+			con->clear();
+			con->printAt(1, ColorString("错误\n", RED));
+			con->printAt(2, ColorString("答案文件损坏\n", RED));
+			con->printAt(3, ColorString("初始化答案文件中\n", WHITE));
+			CreativeResultFile(true);
+			con->setCursorPosition(0, 4);
+			con->refresh();
+			system("pause");
+			return;
+		}
+	}
+	ifRefresh = stoi(resNum[0]);
+	
 	con->clear();
-	ResInput >> cache;
-	ifRefresh = stoi(cache);
-	con->printAt(1, ColorString("total"+cache, BLUE));
-	con->refresh();
-	ResInput >> cache;
-	con->printAt(2, ColorString("2bit Accepted"+cache, BLUE));
-	con->refresh();
-	ResInput >> cache;
-	con->printAt(3, ColorString("2bit WrongAnswer"+cache, BLUE));
-	con->refresh();
-	ResInput >> cache;
-	con->printAt(4, ColorString("10bit Accepted" + cache, BLUE));
-	con->refresh();
-	ResInput >> cache;
-	con->printAt(5, ColorString("10bit WrongAnswer" + cache, BLUE));
-	con->refresh();
-	ResInput >> cache;
-	con->printAt(6, ColorString("16bit Accepted" + cache, BLUE));
-	con->refresh();
-	ResInput >> cache;
-	con->printAt(7, ColorString("16bit WrongAnswer" + cache, BLUE));
+	con->printAt(1, ColorString("total"+resNum[0], CYAN));
+	con->printAt(2, ColorString("2bit Accepted"+ resNum[1], CYAN));
+	con->printAt(3, ColorString("2bit WrongAnswer"+ resNum[2], CYAN));
+	con->printAt(4, ColorString("10bit Accepted" + resNum[3], CYAN));
+	con->printAt(5, ColorString("10bit WrongAnswer" + resNum[4], CYAN));
+	con->printAt(6, ColorString("16bit Accepted" + resNum[5], CYAN));
+	con->printAt(7, ColorString("16bit WrongAnswer" + resNum[6], CYAN));
 	con->setCursorPosition(0, 8);
 	con->refresh();
 	if (ifRefresh > 5005) {
-		CreativeResultFile();
+		CreativeResultFile(true);
 	}
 	ResInput.close();
 }
@@ -70,10 +99,22 @@ void AfxIO::RecordResult(int standNum, int rightTimes,int totalTimes) {
 void AfxIO::ScreenHelp() {
 	Console* con = Console::getInstance();
 	con->clear();
-	con->printAt(0, ColorString("Help and About", BLUE));
+	con->printAt(0, ColorString("Help and About", WHITE));
 	con->setCursorPosition(0, 1);
 	con->refresh();
 	system("pause");
+}
+int AfxIO::InputNumber(std::string inputNum)
+{
+	bool ifNumber = true;
+	int returnNum;
+	for (int j = 0; j < inputNum.length(); j++) {
+		if (inputNum[j] > '9' || inputNum[j] < '0') {
+			ifNumber = false;
+		}
+	}
+	returnNum = stoi(inputNum);
+	return returnNum;
 }
 int AfxIO::InputChoice(string inputStr) {
 	if (inputStr.length() != 1) {

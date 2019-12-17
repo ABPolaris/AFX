@@ -15,14 +15,15 @@ void OrangeCuiInit() {
 bool ScreenMenu(int *yy) {
 	Console* con = Console::getInstance();
 	AfxIO* afxIO = AfxIO::getInstance();
-	con->printAt(0, ColorString("主菜单\n", GREEN));
-	con->printAt(1, ColorString("1. 2进制算数\n", RED));
-	con->printAt(2, ColorString("2. 10进制算数\n", RED));
-	con->printAt(3, ColorString("3. 16进制算数\n", RED));
-	con->printAt(4, ColorString("0. 帮助\n", RED));
-	con->printAt(5, ColorString("r. 查看答题情况\n", RED));
-	con->printAt(6, ColorString("q. 退出程序\n", RED)); con->refresh();
+	con->printAt(0, ColorString("主菜单\n", WHITE));
+	con->printAt(1, ColorString("1. 2进制算数\n", BRIGHTCYAN));
+	con->printAt(2, ColorString("2. 10进制算数\n", BRIGHTCYAN));
+	con->printAt(3, ColorString("3. 16进制算数\n", BRIGHTCYAN));
+	con->printAt(4, ColorString("0. 帮助和关于\n", BRIGHTCYAN));
+	con->printAt(5, ColorString("r. 查看答题情况\n", BRIGHTCYAN));
+	con->printAt(6, ColorString("q. 退出程序\n", BRIGHTCYAN));
 	con->setCursorPosition(0, 17);
+	con->refresh();
 	string inputStr;
 	int inputNum;
 	cin >> inputStr;
@@ -55,8 +56,9 @@ bool ScreenMenu(int *yy) {
 		break;
 	default:
 		con->clear();
-		con->printAt(1, ColorString("非法输入\n", RED));
-		con->printAt(2, ColorString("2s后返回主菜单\n", WHITE));
+		con->printAt(1, ColorString("错误\n", RED));
+		con->printAt(2, ColorString("非法输入\n", RED));
+		con->printAt(3, ColorString("2s后返回主菜单\n", WHITE));
 		con->refresh();
 		Sleep(2001);
 		return true;
@@ -70,7 +72,7 @@ int main()
 	Console* con = Console::getInstance();
 	AfxIO* afxIO = AfxIO::getInstance();
 	OrangeCuiInit();
-	afxIO->CreativeResultFile();
+	afxIO->CreativeResultFile(false);
 	con->printAt(0, ColorString("Initialization Success\n",Color::BRIGHTBLUE));
 	con->setCursorPosition(0, 17);
 	con->refresh();
