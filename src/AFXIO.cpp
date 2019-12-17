@@ -64,13 +64,14 @@ void AfxIO::InquireResult() {
 	ifRefresh = stoi(resNum[0]);
 	
 	con->clear();
-	con->printAt(1, ColorString("total"+resNum[0], CYAN));
-	con->printAt(2, ColorString("2bit Accepted"+ resNum[1], CYAN));
-	con->printAt(3, ColorString("2bit WrongAnswer"+ resNum[2], CYAN));
-	con->printAt(4, ColorString("10bit Accepted" + resNum[3], CYAN));
-	con->printAt(5, ColorString("10bit WrongAnswer" + resNum[4], CYAN));
-	con->printAt(6, ColorString("16bit Accepted" + resNum[5], CYAN));
-	con->printAt(7, ColorString("16bit WrongAnswer" + resNum[6], CYAN));
+	con->printAt(1, ColorString("答题情况", WHITE));
+	con->printAt(1, ColorString("答题总数"+resNum[0], CYAN));
+	con->printAt(2, ColorString("二进制计算-正确次数"+ resNum[1], CYAN));
+	con->printAt(3, ColorString("二进制计算-错误次数"+ resNum[2], CYAN));
+	con->printAt(4, ColorString("十进制计算-正确次数" + resNum[3], CYAN));
+	con->printAt(5, ColorString("十进制计算-错误次数" + resNum[4], CYAN));
+	con->printAt(6, ColorString("十六进制计算-正确次数" + resNum[5], CYAN));
+	con->printAt(7, ColorString("十六进制计算-错误次数" + resNum[6], CYAN));
 	con->setCursorPosition(0, 8);
 	con->refresh();
 	if (ifRefresh > 5005) {
@@ -104,6 +105,60 @@ void AfxIO::ScreenHelp() {
 	con->refresh();
 	system("pause");
 }
+bool AfxIO::ScreenMenu(int* yy) {
+	Console* con = Console::getInstance();
+	con->printAt(0, ColorString("主菜单\n", WHITE));
+	con->printAt(1, ColorString("1. 2进制算数\n", BRIGHTCYAN));
+	con->printAt(2, ColorString("2. 10进制算数\n", BRIGHTCYAN));
+	con->printAt(3, ColorString("3. 16进制算数\n", BRIGHTCYAN));
+	con->printAt(4, ColorString("0. 帮助和关于\n", BRIGHTCYAN));
+	con->printAt(5, ColorString("r. 查看答题情况\n", BRIGHTCYAN));
+	con->printAt(6, ColorString("q. 退出程序\n", BRIGHTCYAN));
+	con->setCursorPosition(0, 17);
+	con->refresh();
+	string inputStr;
+	int inputNum;
+	cin >> inputStr;
+	inputNum = (InputChoice(inputStr));
+	switch (inputNum)
+	{
+	case 1:
+		*yy = 1;
+		return true;
+		break;
+	case 2:
+		*yy = 2;
+		return true;
+		break;
+	case 3:
+		*yy = 3;
+		return true;
+		break;
+	case 4:
+		ScreenHelp();
+		return true;
+		break;
+	case 5:
+		InquireResult();
+		system("pause");
+		return true;
+		break;
+	case 6:
+		return false;
+		break;
+	default:
+		con->clear();
+		con->printAt(0, ColorString("错误\n", RED));
+		con->printAt(1, ColorString("非法输入\n", RED));
+		con->printAt(2, ColorString("2s后返回主菜单\n", WHITE));
+		con->refresh();
+		Sleep(2001);
+		return true;
+		break;
+	}
+	return true;
+}
+
 int AfxIO::InputNumber(std::string inputNum)
 {
 	bool ifNumber = true;

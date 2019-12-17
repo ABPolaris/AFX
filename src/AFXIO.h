@@ -10,6 +10,7 @@ public:
 	void RecordResult(int standNum,int rightTimes,int totalTimes);
 	void ScreenHelp();
 	//void RefreshResultFile();
+	bool ScreenMenu(int* yy);
 	int InputNumber(std::string inputNum);
 	int InputChoice(std::string inputStr);
 private:

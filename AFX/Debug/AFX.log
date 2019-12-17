@@ -1,3 +1,6 @@
 ﻿  AFXIO.cpp
 D:\gays\AFX\src\AFXIO.cpp(44,21): warning C4018: “<”: 有符号/无符号不匹配
+D:\gays\AFX\src\AFXIO.cpp(165,20): warning C4018: “<”: 有符号/无符号不匹配
+  main.cpp
+  正在生成代码...
   AFX.vcxproj -> D:\gays\AFX\Debug\AFX.exe
