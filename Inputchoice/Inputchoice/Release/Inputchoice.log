@@ -1,0 +1,40 @@
+﻿  pch.cpp
+  transform.cpp
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(37,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(37,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(37,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(41,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(46,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(51,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(56,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(71,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(71,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(71,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(72,2): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(90,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(95,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(105,17): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(119,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(119,54): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(119,54): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(123,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(128,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(133,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(138,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(153,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(153,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(153,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(154,2): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(175,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(180,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(191,2): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(191,52): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(191,52): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(195,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(200,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(205,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(210,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(214,2): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(217,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(222,3): error C2065: “con”: 未声明的标识符
+C:\Users\Administrator\Documents\Inputchoice\Inputchoice\transform.cpp(230,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
