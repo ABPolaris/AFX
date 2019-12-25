@@ -1,4 +1,5 @@
 #include"Console.h"
+#include"./transform.h"
 #include"./AFXIO.h"
 #include<iostream>
 #include<algorithm>
@@ -32,7 +33,9 @@ int main()
 		if (userChoice) {
 			int totalTest = 0, totalRight = 0;
 			for (int i = 0; i < 7; i++) {
-				totalRight += (1 ? 1 : 0);
+				string InputCache;
+				cin >> InputCache;
+				totalRight += (transform(InputCache,userChoice) ? 1 : 0);
 				totalTest++;
 			}
 			afxIO->RecordResult(userChoice, totalRight, totalTest);

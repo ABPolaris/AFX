@@ -71,8 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\gays\orangeCUI\Debug;D:\gays\orangeCUI\src;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <LibraryPath>D:\gays\orangeCUI\Debug;D:\gays\orangeCUI\src;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+    <IncludePath>D:\gays\orangeCUI\dependencies\lib\x86;D:\gays\orangeCUI\Debug;D:\gays\orangeCUI\src;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>D:\gays\orangeCUI\dependencies\lib\x86;D:\gays\orangeCUI\Debug;D:\gays\orangeCUI\src;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -142,10 +142,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\AFXIO.cpp" />
+    <ClCompile Include="..\src\transform.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\pch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\AFXIO.h" />
+    <ClInclude Include="..\src\transform.h" />
+    <ClInclude Include="..\src\framework.h" />
+    <ClInclude Include="..\src\pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

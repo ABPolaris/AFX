@@ -123,15 +123,15 @@ bool AfxIO::ScreenMenu(int* yy) {
 	switch (inputNum)
 	{
 	case 1:
-		*yy = 1;
-		return true;
-		break;
-	case 2:
 		*yy = 2;
 		return true;
 		break;
+	case 2:
+		*yy = 10;
+		return true;
+		break;
 	case 3:
-		*yy = 3;
+		*yy = 16;
 		return true;
 		break;
 	case 4:

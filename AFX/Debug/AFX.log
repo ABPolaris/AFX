@@ -1,6 +1,28 @@
-﻿  AFXIO.cpp
-D:\gays\AFX\src\AFXIO.cpp(44,21): warning C4018: “<”: 有符号/无符号不匹配
-D:\gays\AFX\src\AFXIO.cpp(165,20): warning C4018: “<”: 有符号/无符号不匹配
+﻿  transform.cpp
+D:\gays\AFX\src\transform.cpp(23,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
+D:\gays\AFX\src\transform.cpp(23,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+D:\gays\AFX\src\transform.cpp(23,56): error C2660: “Console::printAt”: 函数不接受 1 个参数
+D:\gays\orangeCUI\src\Console.h(23,8): message : 参见“Console::printAt”的声明
+D:\gays\AFX\src\transform.cpp(57,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
+D:\gays\AFX\src\transform.cpp(57,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+D:\gays\AFX\src\transform.cpp(57,56): error C2660: “Console::printAt”: 函数不接受 1 个参数
+D:\gays\orangeCUI\src\Console.h(23,8): message : 参见“Console::printAt”的声明
+D:\gays\AFX\src\transform.cpp(92,17): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\gays\AFX\src\transform.cpp(106,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
+D:\gays\AFX\src\transform.cpp(106,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+D:\gays\AFX\src\transform.cpp(106,56): error C2660: “Console::printAt”: 函数不接受 1 个参数
+D:\gays\orangeCUI\src\Console.h(23,8): message : 参见“Console::printAt”的声明
+D:\gays\AFX\src\transform.cpp(140,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
+D:\gays\AFX\src\transform.cpp(140,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+D:\gays\AFX\src\transform.cpp(140,56): error C2660: “Console::printAt”: 函数不接受 1 个参数
+D:\gays\orangeCUI\src\Console.h(23,8): message : 参见“Console::printAt”的声明
+D:\gays\AFX\src\transform.cpp(179,52): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
+D:\gays\AFX\src\transform.cpp(179,52): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
+D:\gays\AFX\src\transform.cpp(179,53): error C2660: “Console::printAt”: 函数不接受 1 个参数
+D:\gays\orangeCUI\src\Console.h(23,8): message : 参见“Console::printAt”的声明
   main.cpp
+D:\gays\AFX\src\transform.cpp(218,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\gays\AFX\src\main.cpp(38,51): error C2664: “bool transform(int,char [])”: 无法将参数 1 从“std::string”转换为“int”
+D:\gays\AFX\src\main.cpp(38,30): message : 没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
   正在生成代码...
-  AFX.vcxproj -> D:\gays\AFX\Debug\AFX.exe
+D:\gays\AFX\src\transform.h(18,6): message : 参见“transform”的声明
