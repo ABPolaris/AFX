@@ -6,7 +6,7 @@ bool transform2()
 	
 	Console* con = Console::getInstance();
 	con->clear();
-	int f1, a1, a2, t, p, f, s, i, l, q, x;
+	int f1, a1, a2, t, p, f, s, i, l, q, x , h=0;
 	char a[20];
 	string r = "";
 	string b;
@@ -74,18 +74,35 @@ bool transform2()
 		f = f / 2;
 	}
 	if (x < 0) { s = s + 1; a[s] = '-'; }
-	l = 1;
+	L1:l = 1;
 	cin >>b;
 	for (i = s; i >= 0; i--)
 		if (a[i] != b[s - i]) { l = 0; break; }
 	if (l == 1)
 	{
+		con->clear();
 		con->printAt(1, ColorString("true\n", RED));
+		con->refresh();
+		system("pause");
 		return true;
 	}
 	else
 	{
 		con->printAt(1, ColorString("false\n", RED));
+		con->refresh();
+		h = h + 1;
+		if (h == 2)
+		{
+			r="";
+			for (i = s; i >= 0; i--)
+				r = r + a[i];
+			con->clear();
+			con->printAt(0, ColorString(r, BRIGHTYELLOW));
+			con->refresh();
+		}
+		else 
+			goto L1;
+		system("pause");
 		return false;
 	}
 }
@@ -95,44 +112,42 @@ bool transform16()
 {
 	Console* con = Console::getInstance();
 	con->clear();
-	int f1, a1, a2, t, p, f, s, i, l, q, x,rt;
-	char a[20];
-	string b;
-	string r = "";
-	q = pow(2, 10) - 1;
-	a1 = rand() % q + 1;
-	a2 = rand() % q + 1;
+	int f1, a1, a2, t, p, f, s, i, l,h=0;
+	char a[8], b[8], t1, t2;
+	string r="";
+	a1 = rand() % 0xff + 0x1;
+	a2 = rand() % 0xff + 0x1;
 	p = rand() % 4 + 1;
 	f1 = a1;
 	s = -1;
 	while (f1 != 0)
 	{
-		t = f1 % 2;
+		t = f1 % 16;
 		s = s + 1;
-		a[s] = 48 + t;
-		f1 = f1 / 2;
+		if (t > 9) a[s] = 55 + t; else a[s] = 48 + t;
+		f1 = f1 / 16;
 	}
 	for (i = s; i >= 0; i--)
-		r = r + a[i];
+		r=r+a[i];
 	switch (p) {
 	case 1: {
 		f = a1 + a2;
-		r = r + "+";
+		r=r+"+";
 		break;
 	}
 	case 2: {
 		f = a1 - a2;
-		r = r + "-";
+		r=r+ "-";
 		break;
 	}
 	case 3: {
 		f = a1 * a2;
-		r = r + "*";
+		r=r+ "*";
 		break;
 	}
 	case 4: {
 		f = a1 / a2;
-		r = r + "/";
+		r=r+ "/";
 		break;
 	}
 	}
@@ -140,45 +155,54 @@ bool transform16()
 	s = -1;
 	while (f1 != 0)
 	{
-		t = f1 % 2;
+		t = f1 % 16;
 		s = s + 1;
-		a[s] = 48 + t;
-		f1 = f1 / 2;
+		if (t > 9) a[s] = 55 + t; else a[s] = 48 + t;
+		f1 = f1 / 16;
 	}
 	l = 1;
-	r = "";
 	for (i = s; i >= 0; i--)
-		r = r + a[i];
-	r = r + "=";
+		r=r+ a[i];
+	r=r+"=";
 	con->printAt(0, ColorString(r, BRIGHTYELLOW));
 	con->refresh();
-	x = f;
-	if (f < 0) f = -f;
 	s = -1;
 	while (f != 0)
 	{
-		t = f % 2;
+		t = f % 16;
 		s = s + 1;
-		a[s] = 48 + t;
-		f = f / 2;
+		if (t > 9) a[s] = 55 + t; else a[s] = 48 + t;
+		f = f / 16;
 	}
-	if (x < 0) { s = s + 1; a[s] = '-'; }
-	l = 1;
+	L2:l = 1;
 	cin >> b;
-	rt = b.length();
-	for (i = 0; i <= rt - 1; i++)
-		if ((b[i] >= 'a') && (b[i] <= 'z'))
-			b[i] = b[i] - 32;
-    for (i = s; i >= 0; i--)
+	for (i = s; i >= 0; i--)
 		if (a[i] != b[s - i]) { l = 0; break; }
 	if (l == 1)
 	{
+		con->clear();
 		con->printAt(1, ColorString("true\n", RED));
+		con->refresh();
+		system("pause");
 		return true;
 	}
 	else
 	{
 		con->printAt(1, ColorString("false\n", RED));
+		con->refresh();
+		h = h + 1;
+		if (h == 2)
+		{
+			r = "";
+			for (i = s; i >= 0; i--)
+				r = r + a[i];
+			con->clear();
+			con->printAt(0, ColorString(r, BRIGHTYELLOW));
+			con->refresh();
+		}
+		else
+			goto L2;
+		system("pause");
 		return false;
 	}
 }
@@ -187,15 +211,14 @@ bool transform10()
 {
 	Console* con = Console::getInstance();
 	con->clear();
-	int a1, a2, p, f, s, t, l,pt,b;
-	stringstream ss;
-	string r="",r1="";
+	int a1, a2, p, f, s, t, l,pt,h=0;
+	stringstream ss,ss1,ss2,ss3;
+	string r="",r1="",r2="",r3="",b;
 	a1 = rand() % 999 + 1;
 	a2 = rand() % 999 + 1;
 	p = rand() % 4 + 1;
 	ss << a1;
 	ss >> r;
-	con->printAt(0, ColorString(r, Color::BRIGHTYELLOW));
 	switch (p) {
 	case 1: {
 		f = a1 + a2;
@@ -218,20 +241,37 @@ bool transform10()
 		break;
 	}
 	}
-	ss << a2;
-	ss >> r1;
-	r = r + r1+"=";
+	ss1 << a2;
+	ss1 >> r1;
+	r = r + r1;
+	r=  r + "=";
 	con->printAt(0, ColorString(r, BRIGHTYELLOW));
+	//con->printAt(0, ColorString(r, BRIGHTYELLOW));
 	con->refresh();
-	if (scanf("%d", &b) == 0) pt = 0; else pt = 1;
-	if ((b == f) && (pt==1))
+	ss3 << f;
+	ss3 >> r3;
+    L3:cin>>b;
+	if (b == r3)
 	{
+		con->clear();
 		con->printAt(1, ColorString("true\n", RED));
+		con->refresh();
+		system("pause");
 		return true;
 	}
 	else
 	{
 		con->printAt(1, ColorString("false\n", RED));
+		con->refresh();
+		h = h + 1;
+		if (h == 2) {
+			con->clear();
+			con->printAt(0, ColorString(r3, BRIGHTYELLOW));
+			con->refresh();
+		}
+		else
+			goto L3;
+		system("pause");
 		return false;
 	}
 }

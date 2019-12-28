@@ -36,8 +36,9 @@ void AfxIO::InquireResult() {
 	ifstream ResInput("./Result.log");
 	string cache,resNum[9];
 	bool ifNumber=true;
+	con->clear();
 	int ifRefresh;
-	
+
 	for (int i = 0; i < 7; i++) {
 		ResInput >> cache;
 		ifNumber = true;
@@ -50,7 +51,6 @@ void AfxIO::InquireResult() {
 			resNum[i] = cache;
 		}
 		else {
-			con->clear();
 			con->printAt(1, ColorString("错误\n", RED));
 			con->printAt(2, ColorString("答案文件损坏\n", RED));
 			con->printAt(3, ColorString("初始化答案文件中\n", WHITE));
@@ -62,25 +62,47 @@ void AfxIO::InquireResult() {
 		}
 	}
 	ifRefresh = stoi(resNum[0]);
-	
-	con->clear();
-	con->printAt(1, ColorString("答题情况", WHITE));
-	con->printAt(1, ColorString("答题总数"+resNum[0], CYAN));
-	con->printAt(2, ColorString("二进制计算-正确次数"+ resNum[1], CYAN));
-	con->printAt(3, ColorString("二进制计算-错误次数"+ resNum[2], CYAN));
-	con->printAt(4, ColorString("十进制计算-正确次数" + resNum[3], CYAN));
-	con->printAt(5, ColorString("十进制计算-错误次数" + resNum[4], CYAN));
-	con->printAt(6, ColorString("十六进制计算-正确次数" + resNum[5], CYAN));
-	con->printAt(7, ColorString("十六进制计算-错误次数" + resNum[6], CYAN));
-	con->setCursorPosition(0, 8);
+
+	con->printAt(0, ColorString("答题情况", WHITE));
+	con->printAt(1, ColorString("    答题总数", CYAN));
+	con->printAt(1, ColorString(resNum[0], BRIGHTBLUE));
+	con->printAt(2, ColorString("    二进制计算正确次数", CYAN));
+	con->printAt(2, ColorString(resNum[1], BRIGHTBLUE));
+	con->printAt(3, ColorString("    二进制计算错误次数", CYAN));
+	con->printAt(3, ColorString(resNum[2], BRIGHTBLUE));
+	con->printAt(4, ColorString("    十进制计算正确次数", CYAN));
+	con->printAt(4, ColorString(resNum[3], BRIGHTBLUE));
+	con->printAt(5, ColorString("    十进制计算错误次数", CYAN));
+	con->printAt(5, ColorString(resNum[4], BRIGHTBLUE));
+	con->printAt(6, ColorString("    十六进制计算正确次数", CYAN));
+	con->printAt(6, ColorString(resNum[5], BRIGHTBLUE));
+	con->printAt(7, ColorString("    十六进制计算错误次数", CYAN));
+	con->printAt(7, ColorString(resNum[6], BRIGHTBLUE));
+	con->setCursorPosition(0, 17);
 	con->refresh();
+	system("pause");
 	if (ifRefresh > 5005) {
+		con->clear();
+		con->printAt(0, ColorString("答题记录已重置", WHITE));
+		con->setCursorPosition(0, 17);
+		con->refresh();
+		system("pause");
 		CreativeResultFile(true);
 	}
 	ResInput.close();
 }
 void AfxIO::RecordResult(int standNum, int rightTimes,int totalTimes) {
+	Console* con = Console::getInstance();
 	int results[10];
+	if (standNum == 2) {
+		standNum = 1;
+	}
+	else if (standNum == 10) {
+		standNum = 2;
+	}
+	else if (standNum == 16) {
+		standNum = 3;
+	}
 	ifstream ResInput("./Result.log");
 	string cache;
 	for (int i = 0; i < 7; i++) {
@@ -90,6 +112,13 @@ void AfxIO::RecordResult(int standNum, int rightTimes,int totalTimes) {
 	ResInput.close();
 	ofstream ResOutput("./Result.log");
 	results[0] += totalTimes;
+	if (results[0] > 5005) {
+		con->clear();
+		con->printAt(0, ColorString("答题记录已重置", WHITE));
+		con->refresh();
+		system("pause");
+		CreativeResultFile(true);
+	}
 	results[2 * standNum] += (totalTimes - rightTimes);
 	results[2 * standNum - 1] += rightTimes;
 	for (int i = 0; i < 7; i++) {
@@ -101,16 +130,26 @@ void AfxIO::ScreenHelp() {
 	Console* con = Console::getInstance();
 	con->clear();
 	con->printAt(0, ColorString("Help and About", WHITE));
-	con->setCursorPosition(0, 1);
+	con->printAt(1, ColorString("There is a number before every feature", BRIGHTWHITE));
+	con->printAt(2, ColorString("Type in it and start the feature\n", BRIGHTWHITE));
+	con->printAt(3, ColorString("---\n", BRIGHTWHITE));
+	con->printAt(4, ColorString("There are 7 questions in every feature\n", WHITE));
+	con->printAt(5, ColorString("You can answer twice\n", WHITE));
+	con->printAt(6, ColorString("---\n", WHITE));
+	con->printAt(7, ColorString("programmers：\n", CYAN));
+	con->printAt(8, ColorString("AkiPolaris\n", BRIGHTBLUE));
+	con->printAt(9, ColorString("+1s +1s +1s +1s\n", BRIGHTBLUE));
+	con->printAt(10, ColorString("傅文昊\n", BLUE));
+	con->setCursorPosition(0, 17);
 	con->refresh();
 	system("pause");
 }
 bool AfxIO::ScreenMenu(int* yy) {
 	Console* con = Console::getInstance();
 	con->printAt(0, ColorString("主菜单\n", WHITE));
-	con->printAt(1, ColorString("1. 2进制算数\n", BRIGHTCYAN));
-	con->printAt(2, ColorString("2. 10进制算数\n", BRIGHTCYAN));
-	con->printAt(3, ColorString("3. 16进制算数\n", BRIGHTCYAN));
+	con->printAt(1, ColorString("1. 2进制算数答题\n", BRIGHTCYAN));
+	con->printAt(2, ColorString("2. 10进制算数答题\n", BRIGHTCYAN));
+	con->printAt(3, ColorString("3. 16进制算数答题\n", BRIGHTCYAN));
 	con->printAt(4, ColorString("0. 帮助和关于\n", BRIGHTCYAN));
 	con->printAt(5, ColorString("r. 查看答题情况\n", BRIGHTCYAN));
 	con->printAt(6, ColorString("q. 退出程序\n", BRIGHTCYAN));
@@ -140,7 +179,6 @@ bool AfxIO::ScreenMenu(int* yy) {
 		break;
 	case 5:
 		InquireResult();
-		system("pause");
 		return true;
 		break;
 	case 6:
