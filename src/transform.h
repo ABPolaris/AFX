@@ -14,5 +14,8 @@
 #include<windows.h>
 #include<algorithm>
 #include<string.h>
+#include<cstring>
+#include<math.h>
+#include <sstream>
 
-bool transform(int m, char b[20]);
+bool transform(int m);

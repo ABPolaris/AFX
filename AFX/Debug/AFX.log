@@ -1,28 +1,17 @@
 ﻿  transform.cpp
-D:\gays\AFX\src\transform.cpp(23,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
-D:\gays\AFX\src\transform.cpp(23,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
-D:\gays\AFX\src\transform.cpp(23,56): error C2660: “Console::printAt”: 函数不接受 1 个参数
-D:\gays\orangeCUI\src\Console.h(23,8): message : 参见“Console::printAt”的声明
-D:\gays\AFX\src\transform.cpp(57,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
-D:\gays\AFX\src\transform.cpp(57,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
-D:\gays\AFX\src\transform.cpp(57,56): error C2660: “Console::printAt”: 函数不接受 1 个参数
-D:\gays\orangeCUI\src\Console.h(23,8): message : 参见“Console::printAt”的声明
-D:\gays\AFX\src\transform.cpp(92,17): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-D:\gays\AFX\src\transform.cpp(106,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
-D:\gays\AFX\src\transform.cpp(106,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
-D:\gays\AFX\src\transform.cpp(106,56): error C2660: “Console::printAt”: 函数不接受 1 个参数
-D:\gays\orangeCUI\src\Console.h(23,8): message : 参见“Console::printAt”的声明
-D:\gays\AFX\src\transform.cpp(140,55): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
-D:\gays\AFX\src\transform.cpp(140,55): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
-D:\gays\AFX\src\transform.cpp(140,56): error C2660: “Console::printAt”: 函数不接受 1 个参数
-D:\gays\orangeCUI\src\Console.h(23,8): message : 参见“Console::printAt”的声明
-D:\gays\AFX\src\transform.cpp(179,52): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“ColorString”
-D:\gays\AFX\src\transform.cpp(179,52): message : 无构造函数可以接受源类型，或构造函数重载决策不明确
-D:\gays\AFX\src\transform.cpp(179,53): error C2660: “Console::printAt”: 函数不接受 1 个参数
-D:\gays\orangeCUI\src\Console.h(23,8): message : 参见“Console::printAt”的声明
+D:\gays\AFX\src\transform.cpp(97,17): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\gays\AFX\src\transform.cpp(183,20): warning C4101: “s”: 未引用的局部变量
+D:\gays\AFX\src\transform.cpp(183,26): warning C4101: “l”: 未引用的局部变量
+D:\gays\AFX\src\transform.cpp(183,23): warning C4101: “t”: 未引用的局部变量
   main.cpp
-D:\gays\AFX\src\transform.cpp(218,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-D:\gays\AFX\src\main.cpp(38,51): error C2664: “bool transform(int,char [])”: 无法将参数 1 从“std::string”转换为“int”
-D:\gays\AFX\src\main.cpp(38,30): message : 没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
   正在生成代码...
-D:\gays\AFX\src\transform.h(18,6): message : 参见“transform”的声明
+D:\gays\AFX\src\transform.cpp(236,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\gays\AFX\src\transform.cpp(258): warning C4715: “transform”: 不是所有的控件路径都返回值
+  orangeCUI.lib(ColorString.obj) : 找到 MSIL .netmodule 或使用 /GL 编译的模块；正在使用 /LTCG 重新启动链接；将 /LTCG 添加到链接命令行以改进链接器性能
+LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/LTCG”规范)
+orangeCUI.lib(ColorString.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AFXIO.obj 中)
+orangeCUI.lib(ColorString.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(AFXIO.obj 中)
+orangeCUI.lib(Console.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”不匹配值“2”(AFXIO.obj 中)
+orangeCUI.lib(Console.obj) : error LNK2038: 检测到“RuntimeLibrary”的不匹配项: 值“MD_DynamicRelease”不匹配值“MDd_DynamicDebug”(AFXIO.obj 中)
+LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+D:\gays\AFX\Debug\AFX.exe : fatal error LNK1319: 检测到 4 个不匹配项

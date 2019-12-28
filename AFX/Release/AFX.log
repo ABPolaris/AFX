@@ -1,0 +1,19 @@
+﻿  transform.cpp
+D:\gays\AFX\src\transform.cpp(102,17): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\gays\AFX\src\transform.cpp(190,20): warning C4101: “s”: 未引用的局部变量
+D:\gays\AFX\src\transform.cpp(190,26): warning C4101: “l”: 未引用的局部变量
+D:\gays\AFX\src\transform.cpp(190,23): warning C4101: “t”: 未引用的局部变量
+D:\gays\AFX\src\transform.cpp(242,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\gays\AFX\src\transform.cpp(240,18): warning C4101: “k”: 未引用的局部变量
+D:\gays\AFX\src\transform.cpp(240,6): warning C4101: “p”: 未引用的局部变量
+D:\gays\AFX\src\transform.cpp(240,15): warning C4101: “s”: 未引用的局部变量
+D:\gays\AFX\src\transform.cpp(240,20): warning C4101: “l”: 未引用的局部变量
+D:\gays\AFX\src\transform.cpp(240,9): warning C4101: “i”: 未引用的局部变量
+D:\gays\AFX\src\transform.cpp(240,12): warning C4101: “r”: 未引用的局部变量
+  正在生成代码
+D:\gays\AFX\src\transform.cpp(248): warning C4715: “transform”: 不是所有的控件路径都返回值
+  14 of 313 functions ( 4.5%) were compiled, the rest were copied from previous compilation.
+    2 functions were new in current compilation
+    10 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  AFX.vcxproj -> D:\gays\AFX\Release\AFX.exe
