@@ -139,7 +139,12 @@ void AfxIO::ScreenHelp() {
 	con->printAt(7, ColorString("programmers£º\n", CYAN));
 	con->printAt(8, ColorString("AkiPolaris\n", BRIGHTBLUE));
 	con->printAt(9, ColorString("+1s +1s +1s +1s\n", BRIGHTBLUE));
-	con->printAt(10, ColorString("¸µÎÄê»\n", BLUE));
+	con->printAt(10, ColorString("fwh\n", BLUE));
+	con->printAt(11, ColorString("---\n", WHITE));
+	con->printAt(12, ColorString("Thanks :\n", BRIGHTGREEN));
+	con->printAt(13, ColorString("orangeCUI,which open sourse in GitHub with MIT License\n", GREEN));
+
+
 	con->setCursorPosition(0, 17);
 	con->refresh();
 	system("pause");
