@@ -280,9 +280,9 @@ bool transform(int m)
 	int p, i, r, s, k,l;
 	Console* con = Console::getInstance();
 	srand(time(0));
-	if (m == 2) {
-	      return transform2();
+	switch (m) {
+	case 2:return transform2();
+	case 10:return transform10();
+	case 16:return transform16();
 	}
-	else if (m == 10) return transform10();
-	else if (m == 16) return transform16();
 }
